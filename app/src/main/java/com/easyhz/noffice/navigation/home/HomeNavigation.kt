@@ -19,6 +19,7 @@ import com.easyhz.noffice.navigation.home.screen.Home
 import com.easyhz.noffice.navigation.home.screen.Onboarding
 import com.easyhz.noffice.navigation.home.screen.Splash
 import com.easyhz.noffice.navigation.my_page.navigateToMyPage
+import com.easyhz.noffice.navigation.organization.navigateToOrganizationDetail
 import com.easyhz.noffice.navigation.sign.navigateToLogIn
 import com.easyhz.noffice.navigation.sign.screen.LogIn
 
@@ -38,7 +39,7 @@ internal fun NavGraphBuilder.homeGraph(
     }
     composable<Onboarding> {
         OnboardingScreen(
-            navigateToLogin = navController::navigateToLogIn
+            navigateToLogin = navController::navigateToHome
         )
     }
     composable<Home>(
@@ -53,7 +54,8 @@ internal fun NavGraphBuilder.homeGraph(
         HomeScreen(
             modifier = modifier,
             navigateToAnnouncementDetail = navController::navigateToAnnouncementDetail,
-            navigateToMyPage = navController::navigateToMyPage
+            navigateToMyPage = navController::navigateToMyPage,
+            navigateToOrganization = navController::navigateToOrganizationDetail
         )
     }
 }

@@ -33,6 +33,7 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = hiltViewModel(),
     navigateToAnnouncementDetail: (Int, String) -> Unit,
+    navigateToOrganization: (Int, String) -> Unit,
     navigateToMyPage: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -84,15 +85,16 @@ fun HomeScreen(
                         dayOfWeek = uiState.dayOfWeek,
                         name = uiState.name,
                         organizationList = organizationList,
+                        onClickOrganization = navigateToOrganization,
                         navigateToAnnouncementDetail = navigateToAnnouncementDetail
                     )
                 }
 
-                HomeTopBarMenu.TASK -> {
-                    TaskView(modifier = Modifier
-                        .padding(top = paddingValues.calculateTopPadding())
-                        .screenHorizonPadding())
-                }
+//                HomeTopBarMenu.TASK -> {
+//                    TaskView(modifier = Modifier
+//                        .padding(top = paddingValues.calculateTopPadding())
+//                        .screenHorizonPadding())
+//                }
             }
         }
     }

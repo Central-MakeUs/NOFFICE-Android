@@ -57,6 +57,8 @@ fun PromotionScreen(
     modifier: Modifier = Modifier,
     viewModel: PromotionViewModel = hiltViewModel(),
     param: AnnouncementParam,
+    navigateToUp: () -> Unit,
+    navigateToHome: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val scrollState = rememberLazyListState()
@@ -76,6 +78,7 @@ fun PromotionScreen(
                 enabled = true
             ) {
                 viewModel.postIntent(PromotionIntent.ClickBackButton)
+                navigateToHome()
             }
         },
         topBar = {
@@ -89,7 +92,7 @@ fun PromotionScreen(
                             tint = Grey400
                         )
                     },
-                    onClick = { }
+                    onClick = { navigateToUp() }
                 ),
                 title = stringResource(id = R.string.announcement_creation_title),
             )

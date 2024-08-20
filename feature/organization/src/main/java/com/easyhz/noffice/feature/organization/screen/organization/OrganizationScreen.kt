@@ -35,14 +35,14 @@ fun OrganizationScreen(
 ) {
     val organizationList = viewModel.organizationState.collectAsLazyPagingItems()
     NofficeScaffold(
-        topBar = {
-            HomeTopBar(
-                tabs = enumValues<OrganizationTopBarMenu>(),
-                onClickIconMenu = { }
-            ) {
-
-            }
-        }
+//        topBar = {
+//            HomeTopBar(
+//                tabs = enumValues<OrganizationTopBarMenu>(),
+//                onClickIconMenu = { }
+//            ) {
+//
+//            }
+//        }
     ) { paddingValues ->
         if(organizationList.itemCount == 0 && organizationList.loadState.refresh != LoadState.Loading) {
             ExceptionView(

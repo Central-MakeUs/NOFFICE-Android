@@ -64,7 +64,7 @@ class HomeViewModel @Inject constructor(
 
     private fun onClickTopBarIconMenu(iconMenu: TopBarIconMenu) {
         when(iconMenu) {
-            TopBarIconMenu.NOTIFICATION -> { }
+//            TopBarIconMenu.NOTIFICATION -> { }
             TopBarIconMenu.USER -> { navigateToMyPageScreen() }
         }
     }

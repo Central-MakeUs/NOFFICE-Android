@@ -21,6 +21,7 @@ import com.easyhz.noffice.navigation.announcement.screen.AnnouncementCreation
 import com.easyhz.noffice.navigation.announcement.screen.AnnouncementCreation.Promotion.Companion.decode
 import com.easyhz.noffice.navigation.announcement.screen.AnnouncementCreation.Promotion.Companion.encode
 import com.easyhz.noffice.navigation.announcement.screen.AnnouncementDetail
+import com.easyhz.noffice.navigation.home.navigateToHome
 import com.easyhz.noffice.navigation.util.sharedViewModel
 
 internal fun NavGraphBuilder.announcementGraph(
@@ -117,7 +118,9 @@ internal fun NavGraphBuilder.announcementGraph(
         ) {
             val args = it.toRoute<AnnouncementCreation.Promotion>()
             PromotionScreen(
-                param = args.announcementParam.decode()
+                param = args.announcementParam.decode(),
+                navigateToUp = navController::navigateUp,
+                navigateToHome = navController::navigateToHome
             )
         }
     }

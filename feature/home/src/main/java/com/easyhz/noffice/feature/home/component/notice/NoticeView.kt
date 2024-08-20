@@ -31,6 +31,7 @@ fun NoticeView(
     modifier: Modifier = Modifier,
     name: String,
     dayOfWeek: String,
+    onClickOrganization: (Int, String) -> Unit,
     organizationList: LazyPagingItems<Organization>,
     navigateToAnnouncementDetail: (Int, String) -> Unit,
 ) {
@@ -45,7 +46,8 @@ fun NoticeView(
             organizationList[index]?.let {
                 OrganizationSection(
                     organization = it,
-                    navigateToAnnouncementDetail = navigateToAnnouncementDetail
+                    navigateToAnnouncementDetail = navigateToAnnouncementDetail,
+                    onClickOrganization = onClickOrganization
                 )
             }
         }
@@ -57,6 +59,7 @@ private fun OrganizationSection(
     modifier: Modifier = Modifier,
     noticeViewModel: NoticeViewModel = hiltViewModel(),
     organization: Organization,
+    onClickOrganization: (Int, String) -> Unit,
     navigateToAnnouncementDetail: (Int, String) -> Unit,
 ) {
     val announcementList = noticeViewModel.announcementState.collectAsLazyPagingItems()
@@ -72,7 +75,7 @@ private fun OrganizationSection(
                 .padding(vertical = 8.dp),
             organizationName = organization.name
         ) {
-
+            onClickOrganization(organization.id, organization.name)
         }
         LazyRow(
             userScrollEnabled = announcementList.itemCount != 0,
