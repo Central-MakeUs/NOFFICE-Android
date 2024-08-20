@@ -24,7 +24,7 @@ class MyPageMenuViewModel @Inject constructor(
 
     private fun onClickMenuItem(item: MyPageMenu) {
         when(item) {
-            MyPageMenu.INQUIRY -> { }
+            MyPageMenu.INQUIRY -> { handleWithdrawal() }
             MyPageMenu.NOTICE -> {
                 handleNoticeMenu()
             }
@@ -36,7 +36,7 @@ class MyPageMenuViewModel @Inject constructor(
             MyPageMenu.SIGN_OUT -> {
                 handleSignOutMenu()
             }
-            else -> { }
+            else -> { handleWithdrawal() }
         }
     }
 
@@ -70,7 +70,7 @@ class MyPageMenuViewModel @Inject constructor(
 
     private fun onClickSignOutButton(isPositive: Boolean) {
         if (isPositive) {
-            //로그아웃 로직
+            postSideEffect { MenuSideEffect.NavigateToWithdrawal }
         } else {
             reduce { copy(isShowSignOutDialog = false) }
         }
