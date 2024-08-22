@@ -28,8 +28,8 @@ class MyPageMenuViewModel @Inject constructor(
             MyPageMenu.NOTICE -> {
                 handleNoticeMenu()
             }
-            MyPageMenu.TERMS_OF_SERVICE -> { handleTermsOfService() }
-            MyPageMenu.PRIVACY_POLICY -> { handlePrivacyPolicy() }
+            MyPageMenu.TERMS_OF_SERVICE -> { handleNoticeMenu() }
+            MyPageMenu.PRIVACY_POLICY -> { handleNoticeMenu() }
             MyPageMenu.NOTIFICATION -> { handleNotificationMenu() }
             MyPageMenu.CONSENT_TO_INFORMATION -> { handleConsentToInformation() }
             MyPageMenu.WITHDRAWAL -> { handleWithdrawal() }

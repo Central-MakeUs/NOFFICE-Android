@@ -48,24 +48,24 @@ internal fun NofficeApp(
     val snackBarHostState = remember { SnackbarHostState() }
 
     NofficeScaffold(
-        floatingActionButton = {
-            AnimatedVisibility(
-                visible = isVisibleBottomBar,
-                enter = slideInVertically(
-                    initialOffsetY = { it },
-                    animationSpec = tween(durationMillis = BOTTOM_BAR_DURATION)
-                ),
-                exit = slideOutVertically(
-                    targetOffsetY = { it + 52 },
-                    animationSpec = tween(durationMillis = BOTTOM_BAR_DURATION)
-                )
-            ) {
-                HomeAddButton(
-                    modifier = Modifier.offset(y = 52.dp)
-                ) { navController.navigateToAnnouncementNofficeSelection() }
-            }
-        },
-        floatingActionButtonPosition = FabPosition.Center,
+//        floatingActionButton = {
+//            AnimatedVisibility(
+//                visible = isVisibleBottomBar,
+//                enter = slideInVertically(
+//                    initialOffsetY = { it },
+//                    animationSpec = tween(durationMillis = BOTTOM_BAR_DURATION)
+//                ),
+//                exit = slideOutVertically(
+//                    targetOffsetY = { it + 52 },
+//                    animationSpec = tween(durationMillis = BOTTOM_BAR_DURATION)
+//                )
+//            ) {
+//                HomeAddButton(
+//                    modifier = Modifier.offset(y = 52.dp)
+//                ) { navController.navigateToAnnouncementNofficeSelection() }
+//            }
+//        },
+//        floatingActionButtonPosition = FabPosition.Center,
         bottomBar = {
             AnimatedVisibility(
                 visible = isVisibleBottomBar,
