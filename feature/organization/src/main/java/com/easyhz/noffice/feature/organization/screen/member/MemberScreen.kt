@@ -89,18 +89,18 @@ fun MemberScreen(
             )
         },
         bottomBar = {
-            MemberBottomBar(
-                memberViewType = uiState.viewType,
-                onClickListener = object : MemberViewType.ClickListener {
-                    override fun onClickLeftButton() {
-                        viewModel.postIntent(MemberIntent.ClickLeftButton)
-                    }
-
-                    override fun onClickRightButton() {
-                        viewModel.postIntent(MemberIntent.ClickRightButton)
-                    }
-                }
-            )
+//            MemberBottomBar(
+//                memberViewType = uiState.viewType,
+//                onClickListener = object : MemberViewType.ClickListener {
+//                    override fun onClickLeftButton() {
+//                        viewModel.postIntent(MemberIntent.ClickLeftButton)
+//                    }
+//
+//                    override fun onClickRightButton() {
+//                        viewModel.postIntent(MemberIntent.ClickRightButton)
+//                    }
+//                }
+//            )
         }
     ) { paddingValues ->
         LazyColumn(
